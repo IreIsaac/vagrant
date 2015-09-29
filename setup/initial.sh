@@ -28,5 +28,13 @@ sed -i "s/bind-address.*/bind-address = 0.0.0.0/" /etc/mysql/mysql.conf.d/mysqld
 service mysql restart
 # What the hell, let update again
 apt-get -y update
+# now lets prepare samba
+cp /etc/samba/smb.conf /etc/samba/smb.conf.orig
+rm -f /etc/samba/smb.conf
+cd /etc/samba/
+wget http://raw.githubusercontent.com/IreIsaac/vagrant/master/setup/smb.conf
+cd ~
+service smbd reload
+service smbd restart
 # line below is useles, does nothing
 whoami
