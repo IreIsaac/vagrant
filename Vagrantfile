@@ -22,6 +22,6 @@ Vagrant.configure(2) do |config|
         v.customize ["setextradata", :id, "VBoxInternal2/SharedFoldersEnableSymlinksCreate/v-root", "1"]
   end
 
-    config.vm.provision "shell", inline: "https://raw.githubusercontent.com/IreIsaac/vagrant/master/setup/initial.sh"
-    
+    config.vm.provision "shell", path: "https://raw.githubusercontent.com/IreIsaac/vagrant/master/setup/initial.sh"
+
 end
