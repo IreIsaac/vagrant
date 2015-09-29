@@ -1,0 +1,1 @@
+net use Z: \\192.168.33.33\www /User:vagrant /P:YES vagrant
