@@ -36,5 +36,6 @@ wget http://raw.githubusercontent.com/IreIsaac/vagrant/master/setup/smb.conf
 cd ~
 service smbd reload
 service smbd restart
-# line below is useles, does nothing
-whoami
+#clean up some permissions
+adduser vagrant www-data
+chown vagrant:www-data /var/www -R
